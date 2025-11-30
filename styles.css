@@ -14,7 +14,8 @@
 
 section {
     width: 100%;
-    height: 300px;
+    height: 100%;
+    padding-bottom: .5rem;
     background-position: bottom;
     background-size: cover;
     background-attachment: fixed;
@@ -34,7 +35,6 @@ section:nth-of-type(1) {
 }
 
 .header {
-    width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -84,10 +84,6 @@ section:nth-of-type(1) {
     padding-top: 0;
 }
 
-#about {
-    height: 350px;
-}
-
 #about p {
     width: 60%;
     margin: 2rem auto;
@@ -96,15 +92,10 @@ section:nth-of-type(1) {
 }
 
 #technologies {
-    height: 240px;
     background-color: #CCC;
 }
 
 #technologies h2 {
-    color: #333;
-}
-
-#technologies li {
     color: #333;
 }
 
@@ -166,10 +157,6 @@ section:nth-of-type(1) {
     --tech-color: #cc6699;
 }
 
-#soft-skills {
-    height: 450px;
-}
-
 .soft {
     display: flex;
     justify-content: center;
@@ -181,7 +168,6 @@ section:nth-of-type(1) {
     margin-top: 2rem;
     border-radius: 20px;
     width: 80%;
-    height: 300px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -208,7 +194,6 @@ progress {
 }
 
 #education {
-    height: 800px;
     position: relative;
     background: var(--background-color);
     background: linear-gradient(180deg, rgba(0, 0, 30, 1) 28%, rgba(76, 76, 89, 1) 56%, rgba(255, 255, 255, 1) 100%);
@@ -219,6 +204,7 @@ progress {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem 0;
+    min-height: 800px;
 }
 
 .divider {
@@ -288,7 +274,6 @@ progress {
 }
 
 #projects {
-    height: 450px;
     background-color: #FFF;
 }
 
@@ -298,7 +283,7 @@ progress {
 
 .project-container {
     width: 80%;
-    height: 320px;
+    height: 100%;
     margin: 2rem auto;
     border: 2px dotted #CCC;
     border-radius: 10px;
@@ -313,7 +298,7 @@ progress {
 .card-project {
     background-color: var(--background-color);
     width: 600px;
-    height: 250px;
+    max-height: 250px;
     border-radius: 10px;
     margin: 2rem;
     padding: 1rem;
@@ -352,13 +337,12 @@ progress {
 }
 
 #contact {
-    height: 300px;
     background-color: var(--black-color);
 }
 
 .contact-container {
     width: 60%;
-    height: 200px;
+    height: 100%;
     margin: 2rem auto;
     display: flex;
     justify-content: space-around;
@@ -415,11 +399,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-
-    section {
-        height: 1600px;
-    }
-
     .header {
         display: none;
     }
@@ -457,15 +436,6 @@ footer {
         text-decoration: none;
     }
 
-    #about {
-        height: 800px;
-    }
-
-    #technologies {
-        height: 850px;
-        width: 100%;
-    }
-
     #tech {
         display: flex;
         align-items: center;
@@ -475,15 +445,11 @@ footer {
     }
 
     .tech-circle {
-        width: 200px;
-        height: 100px;
+        width: 40%;
+        height: 100%;
         display: flex;
         justify-content: center;
         margin: 1rem;
-    }
-
-    #soft-skills {
-        height: 700px;
     }
 
     .soft-border {
@@ -491,18 +457,11 @@ footer {
         height: auto;
     }
 
-    #education {
-        margin: -1px;
-        height: 1000px;
-        position: relative;
-        background: var(--background-color);
-        background: linear-gradient(180deg, rgba(0, 0, 30, 1) 28%, rgba(76, 76, 89, 1) 56%, rgba(255, 255, 255, 1) 100%);
-    }
 
     .timeline {
         position: relative;
         max-width: 500px;
-        margin: 2rem .5rem;
+        margin: 2rem .8rem;
         padding: 2rem 0;
     }
 
@@ -512,19 +471,21 @@ footer {
 
     .row {
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
     }
 
     .project-container {
-        width: 90%;
-        height: 750px;
+        width: 95%;
+        height: 85%;
     }
 
     .card-project {
-        width: 350px;
-        height: 350px;
-        margin: .5rem;
+        width: 95%;
+        max-height: 350px;
         flex-direction: column;
+        margin: 0.4rem auto;
     }
 
     .img-project-container {
@@ -540,13 +501,8 @@ footer {
         text-align: center;
     }
 
-    #contact {
-        height: 450px;
-    }
-
     .contact-container {
         width: 100%;
-        height: 200px;
         margin: 2rem .5rem;
         flex-direction: column;
     }
@@ -554,7 +510,8 @@ footer {
     .align-contact-mobile {
         display: flex;
         flex-direction: column;
-        width: 85%;
+        align-items: center;
+        width: 100%;
         margin-left: 10px;
     }
 }

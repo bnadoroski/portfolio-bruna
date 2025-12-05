@@ -11,8 +11,8 @@ document.addEventListener('click', function (event) {
 });
 
 const translation = await fetch('lang.json').then(res => res.json());
-const userLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
-setActiveLang(userLang);
+const savedLang = localStorage.getItem("preferredLang") || (navigator.language.startsWith('pt') ? 'pt' : 'en');
+setActiveLang(savedLang);
 
 document.querySelectorAll('.btn-lang').forEach(button => {
     button.addEventListener('click', function () {
@@ -34,4 +34,6 @@ function setActiveLang(lang) {
     document.querySelectorAll(`.btn-lang.btn-${lang}`).forEach(btn => {
         btn.classList.add('active');
     });
+
+    localStorage.setItem('preferredLang', lang);
 }

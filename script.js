@@ -31,5 +31,7 @@ function setActiveLang(lang) {
         btn.classList.remove('active');
     });
 
-    document.querySelector(`.btn-lang.btn-${lang}`).classList.add('active');
+    document.querySelectorAll(`.btn-lang.btn-${lang}`).forEach(btn => {
+        btn.classList.add('active');
+    });
 }
